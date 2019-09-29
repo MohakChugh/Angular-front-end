@@ -1,0 +1,57 @@
+<body class="bg-gradient-primary">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-9 col-lg-12 col-xl-10">
+        <div class="card shadow-lg o-hidden border-0 my-5">
+          <div class="card-body p-0">
+            <div class="row">
+              <div class="col-lg-6 d-none d-lg-flex">
+                <div class="carousel slide" data-ride="carousel" id="carousel-1">
+                  <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active"></div>
+                  </div>
+                  <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><span
+                        class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a
+                      class="carousel-control-next" href="#carousel-1" role="button" data-slide="next"><span
+                        class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
+                  <ol class="carousel-indicators">
+                  </ol>
+                </div>
+                <section>
+                  <div class="jumbotron" id="Jumboo">
+                    <h1 class="text-center">Login</h1>
+                    <p class="text-center">The Portal is authorised only for the government only. Please do not login if
+                      you are not currently a government offical.</p>
+                    <p class="text-center"><a class="btn btn-primary" href="#">Cancel</a></p>
+                  </div>
+                </section>
+              </div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h4 class="text-dark mb-4">Welcome Back!</h4>
+                  </div>
+                  <form class="user">
+                    <div class="form-group"><input class="form-control form-control-user" type="text"
+                        id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..."
+                        name="email" [name]="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"></div>
+                    <div class="form-group"><input class="form-control form-control-user" type="password"
+                        id="exampleInputPassword" placeholder="Password" name="password" [name]="password"
+                        [(ngModel)]="password" [ngModelOptions]="{standalone: true}"></div>
+                    <div class="form-group">
+                      <div class="custom-control custom-checkbox small">
+                      </div>
+                    </div><button class="btn btn-primary btn-block text-white btn-user" type="submit"
+                      (click)='getEmailPassword(email,password)'>Login</button>
+                  </form>
+                  <div class="text-center"><a class="small" [routerLink]="['/register']"
+                      routerLinkActive="router-link-active">Create an Account!</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
