@@ -45,6 +45,6 @@ export class LoginComponent implements OnInit {
       email : this.email,
       password : this.password
     };
-    this.res = this.requestmethod('/login', this.DATA);
+    this.res = this.requestmethod('/api/auth/login', this.DATA);
   }
 }
