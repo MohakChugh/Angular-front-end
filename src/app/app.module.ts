@@ -9,8 +9,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TablesComponent } from './tables/tables.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-// import { * } from './node_modules/axios/dist/axios';
-
 @NgModule({
   declarations: [
     AppComponent,

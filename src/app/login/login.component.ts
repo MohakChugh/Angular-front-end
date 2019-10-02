@@ -19,8 +19,10 @@ export class LoginComponent implements OnInit {
 
   requestmethod(url, DATA) {
     return this.http.post(this.rooturl + url, DATA, {responseType: 'text'}).subscribe(response => {
-      console.log(response + 'loda mera');
-      let recieveddata = {};
+      console.log(response);
+      let recieveddata = {
+        status : 200
+      };
       recieveddata = JSON.parse(response);
       console.log(recieveddata.status);
       if (recieveddata.status === 200) {
@@ -44,8 +46,5 @@ export class LoginComponent implements OnInit {
       password : this.password
     };
     this.res = this.requestmethod('/login', this.DATA);
-    console.log(this.res);
-
-    // check vaidation and then
   }
 }
