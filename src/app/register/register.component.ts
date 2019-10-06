@@ -27,11 +27,15 @@ export class RegisterComponent implements OnInit {
     return this.http.post(this.rooturl + url, DATA, {responseType: 'text'}).subscribe(response => {
       console.log(response);
       let recieveddata = {
-        status : 200
+        status : 200,
+        code : ''
       };
       recieveddata = JSON.parse(response);
-      console.log(recieveddata.status);
-      if (recieveddata.status === 200) {
+      // tslint:disable-next-line: triple-equals
+      if (recieveddata.code === 'auth/invalid-email') {
+        console.log(recieveddata.status);
+        this.router.navigate(['/register']);
+      } else if (recieveddata.status === 200) {
         this.router.navigate(['/dashboard']);
       } else {
         this.router.navigate(['/login']);
